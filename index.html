@@ -1,53 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoTrack AI</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-    <h1>🌱 EcoTrack AI</h1>
-    <p>Carbon Footprint Awareness Platform</p>
-</header>
+    <header>
+        <h1>🌱 EcoTrack AI</h1>
+        <p>Carbon Footprint Awareness Platform</p>
+    </header>
 
-<main>
+    <main>
+        <section class="card">
+            <h2>Carbon Calculator</h2>
+
+            <label for="transport">Transportation (km/week)</label>
+            <input id="transport" aria-label="Transportation distance" required>
+
+            <label for="electricity">Electricity Usage (kWh/month)</label>
+            <input id="electricity" aria-label="electricity" required>
+
+            <label for="food">Meat Meals per Week</label>
+            <input id="food" aria-label="food" required>
+
+            <label for="waste">Waste Generated (kg/week)</label>
+            <input id="waste" aria-label="waste" required>
+
+            <button id="calculateBtn">Calculate</button>
+        </section>
+
+        <section class="card">
+            <h2>Results</h2>
+            <p><strong>Total Carbon Footprint:</strong></p>
+            <h3 id="result">0 kg CO₂</h3>
+
+            <p><strong>Eco Score:</strong></p>
+            <h3 id="ecoScore">0</h3>
+
+            <div id="badge"></div>
+
+            <h3>Recommendations</h3>
+            <ul id="tips"></ul>
+        </section>
+
+        <section class="card">
+            <h2>Carbon Reduction Goal</h2>
+
+            <label for="goal">Monthly CO₂ Goal (kg)</label>
+            <input type="number" id="goal" aria-label="Monthly carbon reduction goal">
+
+            <button id="saveGoalBtn">
+                Save Goal
+            </button>
+
+            <p id="goalStatus"></p>
+        </section>
+
+        <section class="card">
+            <h2>Footprint History</h2>
+            <ul id="historyList"></ul>
+        </section>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <section class="card">
-        <h2>Carbon Calculator</h2>
-
-        <label for="transport">Transportation (km/week)</label>
-        <input type="number" id="transport" min="0">
-
-        <label for="electricity">Electricity Usage (kWh/month)</label>
-        <input type="number" id="electricity" min="0">
-
-        <label for="food">Meat Meals per Week</label>
-        <input type="number" id="food" min="0">
-
-        <label for="waste">Waste Generated (kg/week)</label>
-        <input type="number" id="waste" min="0">
-
-        <button id="calculateBtn">Calculate</button>
+        <h2>Carbon Trend Dashboard</h2>
+        <canvas id="carbonChart"></canvas>
     </section>
-
-    <section class="card">
-        <h2>Results</h2>
-        <p><strong>Total Carbon Footprint:</strong></p>
-        <h3 id="result">0 kg CO₂</h3>
-
-        <p><strong>Eco Score:</strong></p>
-        <h3 id="ecoScore">0</h3>
-
-        <div id="badge"></div>
-
-        <h3>Recommendations</h3>
-        <ul id="tips"></ul>
-    </section>
-</main>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>

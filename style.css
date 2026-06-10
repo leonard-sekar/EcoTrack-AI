@@ -59,6 +59,11 @@ button:hover{
     opacity:0.9;
 }
 
+button:focus,
+input:focus{
+ outline:3px solid green;
+}
+
 #result,
 #ecoScore{
     margin:10px 0;
@@ -73,4 +78,24 @@ button:hover{
 ul{
     margin-top:10px;
     padding-left:20px;
+}
+
+.skip-link{
+    position:absolute;
+    left:-9999px;
+}
+
+.skip-link:focus{
+    left:10px;
+    top:10px;
+    background:white;
+    padding:10px;
+}
+
+#historyList{
+    margin-top:10px;
+}
+
+canvas{
+    max-width:100%;
 }
